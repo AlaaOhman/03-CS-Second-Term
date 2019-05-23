@@ -177,9 +177,10 @@ MOVE R1,id1
 ## Lecture 2
 
 ### Lexical Analyzer:
-*  It reads the source program character by character to produce tokens.<br>
+* It reads the source program character by character to produce tokens.<br>
 
-* Normally a lexical analyzer doesn’t return a list of tokens at one shot, it returns a token when the parser asks a token from it.<br>
+* Normally a lexical analyzer doesn’t return a list of tokens at one shot, it returns a token when the parser asks a token from it.
+<br>
 
 ### Tokens:
 
@@ -228,21 +229,21 @@ MOVE R1,id1
 
 *Examples:*
 
-1. Identifiers in Pascal
+1. Identifiers in Pascal.
 
 ```
     letter => A | B | ... | Z | a | b | ... | z  
     digit => 0 | 1 | ... | 9  
     id => letter (letter | digit )*  
 ```
-2. Identifiers in C
+2. Identifiers in C.
 
 ```
     letter => [A-Za-z]
     digit => [0-9]
     CID => letter_(letter_|digit)\*
 ```
-3. Unsigned numbers in pascal
+3. Unsigned numbers in Pascal.
 
 ```
     digit => 0 | 1 | ... | 9
@@ -252,7 +253,7 @@ MOVE R1,id1
     unsigned-num => digits opt-fraction opt-exponent
 ```
 
-4. Unsigned numbers or floating point numbers in C
+4. Unsigned numbers or floating point numbers in C.
 
 ```
     digit => [0-9]
@@ -276,8 +277,8 @@ MOVE R1,id1
 * In DFA, for each symbol a and state s, there is at most one labeled edge a leaving s.
 <br>
 
-  *Thomson's Construction:*
-  * Used to convert reg. expression to NFA.
+*Thomson's Construction:*
+* Used to convert reg. expression to NFA.
 
   Example:
   <!-- place Example image -->
@@ -286,7 +287,8 @@ MOVE R1,id1
 
   Example:
 
-  ``` S 0 = Ɛ-closure({0}) = {0,1,2,4,7}
+```
+    S 0 = Ɛ-closure({0}) = {0,1,2,4,7}
 
     Ɛ-closure(move(S0 ,a)) = Ɛ-closure({3,8}) = {1,2,3,4,6,7,8} = S1
     Ɛ-closure(move(S0 ,b)) = Ɛ-closure({5}) = {1,2,4,5,6,7} = S2
@@ -296,13 +298,14 @@ MOVE R1,id1
 
     Ɛ-closure(move(S2 ,a)) = Ɛ-closure({3,8}) = {1,2,3,4,6,7,8} = S1
     Ɛ-closure(move(S2 ,b)) = Ɛ-closure({5}) = {1,2,4,5,6,7} = S2
-  ```
+```
 
   <!-- place image of NFA -->
 
-  ``` S0 is the start state of DFA since 0 is a member of S0 ={0,1,2,4,7}
+```
+    S0 is the start state of DFA since 0 is a member of S0 ={0,1,2,4,7}
     S1 is an accepting state of DFA since 8 is a member of S1 = {1,2,3,4,6,7,8}
-  ```
+```
 
   <!-- place image of DFA -->
 
@@ -317,16 +320,18 @@ MOVE R1,id1
 
   Example:
 
-  ``` (a\|b) * a         convert it to augmented regular expression.
+```
+    (a\|b) * a         convert it to augmented regular expression.
     (a\|b) * a #       then number each alphabet and #
 
     ( a \| b )* a #
       1   2    3 4    then create syntax tree
-  ```
+```
 
     <!-- place image of syntax tree -->
 
-  ``` first(root) = {1, 2, 3}
+```
+    first(root) = {1, 2, 3}
     followpos(1)={1,2,3}
     followpos(2)={1,2,3}
     followpos(3)={4}
@@ -337,9 +342,9 @@ MOVE R1,id1
     b: followpos(2) = {1, 2, 3} = S1
 
     S2 = {1, 2, 3, 4}
-    a: followpos(1) and followpos(3)={1,2,3,4}=S2
+    a: followpos(1) and followpos(3) = {1, 2, 3, 4} = S2
     b: followpos(2) = {1, 2, 3} = S1
-  ```
+```
 
   <!-- place imageof DFA -->
 
@@ -355,7 +360,8 @@ MOVE R1,id1
 
   <!-- Place image of DFA -->
 
-  ``` G1 = {1, 2, 3}  
+```
+    G1 = {1, 2, 3}  
     G2 = {4}  
 
     for G1:
@@ -372,7 +378,7 @@ MOVE R1,id1
     4 => 2   3
 
     Resulting DFA
-  ```
+```
 
   <!-- place image of minmized DFA -->
 
