@@ -280,12 +280,12 @@ MOVE R1,id1
 *Thomson's Construction:*
 * Used to convert reg. expression to NFA.
 
-  Example:
+  Example:<br>
   <!-- place Example image -->
 
   * We use the generated NFA is converted then to DFA.
 
-  Example:
+  Example:<br>
 
 ```
     S 0 = Ɛ-closure({0}) = {0,1,2,4,7}
