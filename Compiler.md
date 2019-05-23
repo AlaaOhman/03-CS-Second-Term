@@ -219,52 +219,52 @@ MOVE R1,id1
 
 * We can give names to regular expressions, and we can use these names as symbols to define other regular expressions.
 * A regular definition is a sequence of the definitions of the form:
-  ```
-    d 1 => r 1  
-    d 2 => r 2  
+```
+    d1 => r1  
+    d2 => r2  
     .  
-    d n => r n  
-  ```
+    dn => rn  
+```
 
 *Examples:*
 
 1. Identifiers in Pascal
 
-  ```
+```
     letter => A | B | ... | Z | a | b | ... | z  
     digit => 0 | 1 | ... | 9  
     id => letter (letter | digit )*  
-  ```
+```
 2. Identifiers in C
 
-  ```
+```
     letter => [A-Za-z]
     digit => [0-9]
     CID => letter_(letter_|digit)\*
-  ```
+```
 3. Unsigned numbers in pascal
 
-  ```
+```
     digit => 0 | 1 | ... | 9
     digits => digit +
     opt-fraction => ( . digits ) ?
     opt-exponent => ( E (+|-)? digits ) ?
     unsigned-num => digits opt-fraction opt-exponent
-  ```
+```
 
 4. Unsigned numbers or floating point numbers in C
 
-  ```
+```
     digit => [0-9]
     digits => digit+
     number => digits(.digits)?(E[+-]? digits)?
-  ```
+```
 
 ### Finite Automaton:
 
 - There are two types of FA:
-  - Deterministic: faster, take more space.
-  - Non-deterministic: slower, take less space.
+  - *Deterministic:* faster, take more space.
+  - *Non-deterministic:* slower, take less space.
 - Deterministic is widely used in lexical analyzer.
 - To generate DFA we have two ways:
   - Regular Expression => NFA => DFA
